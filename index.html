@@ -3,105 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>疯狂水世界</title>
+<title>泡泡水世界</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  background: linear-gradient(rgba(20,11,46,0.7),rgba(42,24,82,0.8));
-  background-image: url('bg.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  color:#fff;
-  font-family:微软雅黑;
-  text-align:center;
-  padding:30px 20px;
-  min-height:100vh;
+ background: linear-gradient(rgba(10,6,25,0.8),rgba(26,15,48,0.9));
+ background-image: url('bg.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+ background-attachment: fixed;
+ color:#fff;
+ font-family:微软雅黑;
+ text-align:center;
+ padding:30px 20px;
+ min-height:100vh;
 }
 .main{
-  max-width:700px;
-  margin:0 auto;
-  background:rgba(0,0,0,0.5);
-  border-radius:20px;
-  padding:40px 20px;
-  border:2px solid #8a65d8
+ max-width:700px;
+ margin:0 auto;
+ background:rgba(0,0,0,0.55);
+ border-radius:20px;
+ padding:40px 20px;
+ border:2px solid #d4af37;
 }
 h1{
-  font-size:36px;
-  color:#ffd700;
-  margin-bottom:20px
+ font-size:36px;
+ color:#ffd700;
+ margin-bottom:20px;
 }
 .info{
-  font-size:16px;
-  color:#eee;
-  margin-bottom:40px;
-  line-height:1.7
+ font-size:16px;
+ color:#eee;
+ margin-bottom:40px;
+ line-height:1.7;
 }
 .welfare{
-  background:rgba(138,101,216,0.2);
-  border-radius:15px;
-  padding:25px 15px;
-  margin:25px 0;
-  text-align:left;
-  line-height:1.8;
-  font-size:15px;
-  border:1px solid #8a65d8;
+ background:rgba(212,175,55,0.15);
+ border-radius:15px;
+ padding:25px 15px;
+ margin:25px 0;
+ text-align:left;
+ line-height:1.8;
+ font-size:15px;
+ border:1px solid #d4af37;
 }
 .welfare h3{
-  color:#ffd700;
-  text-align:center;
-  margin-bottom:15px;
-  font-size:18px;
+ color:#ffd700;
+ text-align:center;
+ margin-bottom:15px;
+ font-size:18px;
 }
 .btn{
-  display:block;
-  width:85%;
-  height:55px;
-  line-height:55px;
-  background:#7a57d8;
-  color:#fff;
-  font-size:18px;
-  border-radius:12px;
-  margin:14px auto;
-  text-decoration:none
+ display:block;
+ width:85%;
+ height:55px;
+ line-height:55px;
+ background:#b8860b;
+ color:#fff;
+ font-size:18px;
+ border-radius:12px;
+ margin:14px auto;
+ text-decoration:none;
+ transition: background 0.3s;
+ border:none;
+ cursor:pointer;
 }
 .btn:hover{
-  background:#6342c2
+ background:#9b7007;
+}
+/* 弹窗样式 */
+.modal-mask{
+ display:none;
+ position:fixed;
+ top:0;left:0;
+ width:100%;height:100%;
+ background:rgba(0,0,0,0.75);
+ z-index:999;
+ align-items:center;
+ justify-content:center;
+ padding:20px;
+}
+.modal-box{
+ background:#1a1430;
+ border:2px solid #d4af37;
+ border-radius:16px;
+ max-width:520px;
+ width:100%;
+ padding:24px;
+}
+.modal-box h2{
+ color:#ffd700;
+ margin-bottom:16px;
+ font-size:20px;
+}
+.code-textarea{
+ width:100%;
+ min-height:160px;
+ background:#0c0820;
+ color:#fff;
+ border:1px solid #d4af37;
+ border-radius:10px;
+ padding:12px;
+ font-size:15px;
+ line-height:1.6;
+ resize:none;
+}
+.modal-buttons{
+ margin-top:16px;
+ display:flex;
+ gap:12px;
+}
+.modal-btn{
+ flex:1;
+ height:48px;
+ border-radius:10px;
+ border:none;
+ font-size:16px;
+ cursor:pointer;
+}
+.copy-btn{
+ background:#b8860b;
+ color:#fff;
+}
+.close-btn{
+ background:#444;
+ color:#fff;
+}
+.tip-text{
+ color:#7cf07c;
+ margin-top:10px;
+ display:none;
 }
 </style>
 </head>
 <body>
-
 <div class="main">
-<h1>疯狂水世界</h1>
-<p class="info">
-海上求生小游戏<br>
-上线注册码U111丨有问题私聊群管理
-</p>
-
-<div class="welfare">
-<h3>🎁 内测通用兑换码</h3>
-<p>VIP000:一千万代金券</p>
-<p>VIP555；VIP666</p>
-<p>VIP777；VIP888；VIP999</p>
-<p>注册码：U111，游戏内注册 </p>
-
-
-<br>
-<p>⚠️ 领取提醒：兑换码在游戏左上角头像</p>
-<p>🔐 登录地址：持续更新全新关卡</p>
+ <h1>疯狂水世界</h1>
+ <p class="info">
+  海洋休闲 · 捕鱼冒险 · 爆金不停<br>
+  上线送海量代金券｜超级红将｜专属福利礼包
+ </p>
+ <div class="welfare">
+ <h3>🎁 疯狂水世界永久兑换码</h3>
+ <p>VIP111:代金券*12888，钻石*8888</p>
+ <p>VIP222:招募券*888，藏品券*888，金币*88万，钻石*18888 </p>
+ <p>VIP333:代金券*8888，加速器*8888，建筑蓝图*888</p>
+ <p>VIP666:北境大帝+雾影千代+自由斗士+永生老乔+铁肘老大+水底之王</p>
+ <p>更多兑换码：VIP444,VIP555,VIP888,VIP999</p>
+ <br>
+ <p>💴 充值查看玩家商城</p>
+ <br>
+ <p>⚠️ 领取提醒：兑换码在游戏内【头像-礼品码】兑换，全区全服通用</p>
+ </div>
+ <!-- 打开弹窗按钮 -->
+ <button class="btn" id="openModalBtn">📋一键复制全部兑换码</button>
+ <a href="https://wzw.qingen.fun/apps/ojd8.html" class="btn">📥 下载地址</a>
+ <a href="http://43.241.17.20:100/ops-register?inviteCode=154650" class="btn">👤注册链接</a>
+ <a href="http://43.241.17.20:100/ops-mall" class="btn">💰 玩家中心</a>
+ <a href="http://43.241.17.20:100/ops-mall" class="btn">💰 玩家商城</a>
+ <a href="https://qm.qq.com/q/qrhcyGBY6A" class="btn">📱 玩家Q群</a>
+ <a href="https://1546503875-byte.github.io/zhongxin" class="btn">🎮更多游戏</a>
 </div>
-
-<a href="https://qd.xn--9kq845jbfj.com/ND0l" class="btn">注册码：U111</a>
-<a href="https://qd.xn--9kq845jbfj.com/ND0l" class="btn">📥 安卓下载</a>
-<a href="https://qd.xn--9kq845jbfj.com/pZmz" class="btn">🍎苹果下载</a>
-<a href="http://ht.fkssj.click/player-center/login" class="btn">💰 充值商城</a>
-<a href="http://ht.fkssj.click/player-center/login" class="btn">👤 玩家中心</a>
-<a href="https://qm.qq.com/q/MZYGl7ZrI4" class="btn">🚀玩家Q群</a>
-<a href="https://1546503875-byte.github.io/zhongxin/" class="btn">📱 更多游戏</a>
-
+<!-- 弹窗DOM -->
+<div class="modal-mask" id="modalMask">
+ <div class="modal-box">
+ <h2>全部兑换码（直接复制）</h2>
+ <textarea class="code-textarea" id="codeArea" readonly>
+VIP111:代金券*12888，钻石*8888
+VIP222:招募券*888，藏品券*888，金币*88万，钻石*18888 
+VIP333:代金券*8888，加速器*8888，建筑蓝图*888
+VIP444:超凡英雄万能碎片*188，传说英雄万能碎片*388 
+VIP555:有机土壤*10万，植物百科*10万
+VIP666:北境大帝+雾影千代+自由斗士+永生老乔+铁肘老大+水底之王 
+VIP888:超凡装备材料自选*1888，超凡海兽基因I*1888
+VIP999:玩家经验*20万，英雄经验*1000万，海兽经验*1000万
+ </textarea>
+ <div class="modal-buttons">
+ <button class="modal-btn copy-btn" id="copyBtn">📋复制兑换码</button>
+ <button class="modal-btn close-btn" id="closeBtn">关闭</button>
+ </div>
+ <div class="tip-text" id="copyTip">✅复制成功！去游戏粘贴兑换</div>
+ </div>
 </div>
-
+<script>
+const modalMask = document.getElementById('modalMask');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeBtn = document.getElementById('closeBtn');
+const copyBtn = document.getElementById('copyBtn');
+const codeArea = document.getElementById('codeArea');
+const copyTip = document.getElementById('copyTip');
+//打开弹窗
+openModalBtn.onclick = function(){
+ modalMask.style.display = 'flex';
+ copyTip.style.display = 'none';
+}
+//关闭弹窗
+closeBtn.onclick = function(){
+ modalMask.style.display = 'none';
+}
+//点击遮罩关闭
+modalMask.onclick = function(e){
+ if(e.target === modalMask){
+ modalMask.style.display = 'none';
+ }
+}
+//复制功能
+copyBtn.onclick = async function(){
+ try{
+ await navigator.clipboard.writeText(codeArea.value.trim());
+ copyTip.style.display = 'block';
+ }catch(err){
+ //降级复制方案
+ codeArea.select();
+ document.execCommand('copy');
+ copyTip.style.display = 'block';
+ }
+}
+</script>
 </body>
 </html>
